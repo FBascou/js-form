@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Users Requests example</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<form
+				class="form-container"
+				method="POST"
+				enctype="multipart/form-data"
+				action="https://www.born2global.com/"
+			>
+				<div class="logo-container">
+					<img src="/logo.png" alt="B2G Logo" />
+				</div>
+				<div class="form-title">
+					<h1>JV Consulting Service Request Form</h1>
+				</div>
+				<div class="form-subtitle">
+					<h3>
+						D.N.A. 융합 제품.서비스 해외진출지원사업 협약 기업에게 지원되는 서비스로
+						당해년도 12월 첫째 주까지 신청 가능합니다.
+					</h3>
+				</div>
+				<div class="form-info" id="overview-section">
+					<div class="section-title">
+						<h4>신청 담당자<span>*</span></h4>
+					</div>
+					<div class="section-input" id="overview-group">
+						<div class="form-group">
+							<label for="post-company-name">
+								<h5>회사명</h5>
+							</label>
+							<input
+								type="text"
+								class="form-control text"
+								id="post-company-name"
+								name="post-company-name"
+								placeholder="Born2Global"
+								value="Born2Global"
+								required
+							/>
+						</div>
+						<div class="form-group">
+							<label for="post-name"><h5>담당자명</h5> </label>
+							<input
+								type="text"
+								class="form-control text"
+								id="post-name"
+								name="post-name"
+								placeholder="John Smith"
+								value="John Smith"
+								required
+							/>
+						</div>
+						<div class="form-group">
+							<label for="post-phone"
+								><h5>
+									Phone
+									<span class="input-error-phone"></span></h5
+							></label>
+							<input
+								type="tel"
+								class="form-control text"
+								id="post-phone"
+								name="post-phone"
+								placeholder="82-10-0000-0000"
+								value="82-10-0000-0000"
+								required
+								pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}-[0-9]{4}"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="post-email">
+								<h5>
+									Email
+									<span class="input-error-email"></span>
+								</h5>
+							</label>
+							<input
+								type="email"
+								class="form-control text"
+								id="post-email"
+								placeholder="john.smith@born2global.com"
+								value="pavel@born2global.com"
+								required
+								pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="post-subject">
+								<h5>사업명</h5>
+							</label>
+							<input
+								type="subject"
+								class="form-control text"
+								id="post-subject"
+								placeholder=""
+								disabled
+								value="D.N.A. 융합 제품.서비스 해외진출 지원사업"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="form-info">
+					<div class="section-title">
+						<h4>아래 항목 중 필요한 서비스를 선택해주세요<span>*</span></h4>
+					</div>
+					<div class="section-services">
+						<button class="services-btn" id="consulting">
+							<div class="services-title">
+								<h5>컨설팅</h5>
+							</div>
+						</button>
+						<button class="services-btn" id="travel-expense">
+							<div class="services-title">
+								<h5>국외 여비 지원</h5>
+							</div>
+						</button>
+						<button class="services-btn" id="office-rent">
+							<div class="services-title">
+								<h5>현지 임차료</h5>
+							</div>
+						</button>
+					</div>
+				</div>
+				<!-- Consulting -->
+				<div class="form-info" id="consulting-section">
+					<div class="section-before-after">
+						<div class="before-after-container">
+							<div class="section-title">
+								<h4>JV 설립 단계를 확인해주세요<span>*</span></h4>
+							</div>
+							<div class="before-after-container">
+								<div class="form-wrapper">
+									<div class="form-group radio-group">
+										<label for="post-consulting-before">
+											<h5 class="label-bold">JV 설립 전</h5>
+										</label>
+										<input
+											type="radio"
+											name="consulting-jv-selection"
+											class="form-control radio-select radio-before-after"
+											id="post-consulting-before"
+											value="JV 설립 전"
+										/>
+									</div>
+									<div class="form-group radio-group">
+										<label for="post-consulting-after">
+											<h5 class="label-bold">JV 설립 후</h5>
+										</label>
+										<input
+											type="radio"
+											name="consulting-jv-selection"
+											class="form-control radio-select radio-before-after"
+											id="post-consulting-after"
+											value="JV 설립 후"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section-input">
+						<div class="form-group parent-before">
+							<label for="dropdown-primary-services"
+								><h5>
+									JV 설립 진행에 필요한 컨설팅 서비스는 무엇인가요(단일 서비스
+									서비스 선택)?
+								</h5>
+							</label>
+							<select
+								class="dropdown-services dropdown-parent dropdown-parent-before"
+								name="dropdown-primary-services"
+								id="dropdown-primary-services"
+							>
+								<option value=""></option>
+								<option value="Law">법률 컨설팅</option>
+								<option value="Accounting">회계 컨설팅</option>
+								<option value="IP/Patent">특허 컨설팅</option>
+								<option value="Joint Partnership">파트너십 발굴 및 검증</option>
+							</select>
+						</div>
+						<div class="form-group child-before">
+							<select
+								class="dropdown-services dropdown-child dropdown-child-before"
+								name="partnership-services"
+								id="partnership-services"
+							>
+								<option value=""></option>
+								<option value="Potential Partner Matching">
+									잠재 파트너사 발굴
+								</option>
+								<option
+									value="Potential Partner Validation & Business Information Report"
+								>
+									발굴 파트너사 검증
+								</option>
+							</select>
+							<div class="form-group child-file-before child-matching-file-before">
+								<h5>
+									잠재 파트너사 발굴 신청을 위해 필요한 서류를 제출해주세요.
+									파일크기는 15MB를 초과할 수 없습니다.
+								</h5>
+								<ol>
+									<li class="consulting-list">
+										<div class="consulting-wrapper">
+											<label for="post-matching-intro">
+												기업 및 사업소개 자료 (영문, 자유양식)
+											</label>
+											<input
+												type="file"
+												class="form-control file"
+												id="post-matching-intro"
+												name="post-matching-intro"
+												accept="image/*,.pdf,.xls,.xlxs"
+											/>
+										</div>
+									</li>
+									<li class="consulting-list">
+										<div class="consulting-wrapper">
+											<label for="post-matching-profile">
+												잠재 파트너사 프로필 (영문,
+												<a
+													href="https://drive.google.com/uc?export=download&id=1fzY
+												LN6YcJAqqlO5p4NHP1H8AN_xdqXHC"
+													>센터양식</a
+												>
+												)
+											</label>
+											<input
+												type="file"
+												class="form-control file"
+												id="post-matching-profile"
+												name="post-matching-profile"
+												accept="image/*,.pdf,.xls,.xlxs"
+											/>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<div class="form-group child-file-before child-validation-file-before">
+								<h5>
+									발굴 파트너사 검증을 위해 필요한 서류를 제출해주세요. 파일크기는
+									15MB를 초과할 수 없습니다.
+								</h5>
+								<ol>
+									<li class="consulting-list">
+										<div class="consulting-wrapper">
+											<label for="post-validation-profile">
+												파트너사 기본정보 및 운영 정보(영문,<a
+													href="https://drive.google.com/uc?export=dow
+												nload&id=1EjYKNMkUmfPQbAWWbvdZux
+												Md0wb-Lu5-"
+													>센터 양식</a
+												>
+												)
+											</label>
+											<input
+												type="file"
+												class="form-control file"
+												id="post-validation-profile"
+												name="post-validation-profile"
+												accept="image/*,.pdf,.xls,.xlxs"
+											/>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+						<div class="form-group parent-after">
+							<label for="dropdown-secondary-services">
+								<h5>
+									JV 설립 진행에 필요한 컨설팅 서비스는 무엇인가요(단일 서비스
+									서비스 선택)?
+								</h5>
+							</label>
+							<select
+								class="dropdown-services dropdown-parent dropdown-parent-after"
+								name="dropdown-secondary-services"
+								id="dropdown-secondary-services"
+							>
+								<option value=""></option>
+								<option value="Law">법률 컨설팅</option>
+								<option value="Accounting">회계 컨설팅</option>
+								<option value="IP/Patent">특허 컨설팅</option>
+								<option value="Marketing">마케팅 컨설팅</option>
+								<option value="Product Market Fit">PMF 컨설팅</option>
+							</select>
+						</div>
+						<div class="form-group child-after">
+							<label for="pmf-services">
+								<h5>PMF 서비스 중 세부 항목을 선택해주세요.</h5>
+							</label>
+							<select
+								name="pmf-services"
+								id="pmf-services"
+								class="dropdown-services dropdown-child dropdown-child-after"
+							>
+								<option value=""></option>
+								<option value="Defining Customer and Market">
+									기업의 제품/서비스에 맞는 고객과 시장 정의
+								</option>
+								<option value="User Experience Research">
+									제품/서비스를 보유한 기업의 현지시장 기반 사용자 경험 조사
+								</option>
+								<option value="Potential Patner/Customers Meeting">
+									제품/서비스를 보유한 기업이 타겟 시장의 잠재 파트너/고객 미팅을
+									통한 시장 검증
+								</option>
+								<option value="Pivoting Business Model">
+									타겟 고객 피드백 기반 타겟 시장 현지 비즈니스 모델 피봇 컨설팅
+								</option>
+								<option value="Sales Plan">
+									정의된 타겟 시장 및 고객 기반 세일즈 전략 컨설팅
+								</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="consulting-description">
+								<h5>해당 컨설팅 서비스가 필요한 이유가 무엇인가요?</h5>
+							</label>
+							<textarea
+								class="form-control text"
+								name="consulting-description"
+								id="consulting-description"
+								cols="40"
+								rows="3"
+								maxlength="5000"
+							></textarea>
+						</div>
+					</div>
+				</div>
+				<!-- Travel Expense -->
+				<div class="form-info" id="travel-expense-section">
+					<div class="section-before-after">
+						<div class="before-after-container">
+							<div class="section-title">
+								<h4>JV 설립 단계를 확인해주세요<span>*</span></h4>
+							</div>
+							<div class="form-wrapper">
+								<div class="form-group radio-group">
+									<label for="post-travel-expense-before">
+										<h5 class="label-bold">JV 설립 전</h5>
+									</label>
+									<input
+										type="radio"
+										name="travel-expense-jv-selection"
+										class="form-control radio-before-after"
+										id="post-travel-expense-before"
+										value="JV 설립 전"
+									/>
+								</div>
+								<div class="form-group radio-group">
+									<label for="post-travel-expense-after">
+										<h5 class="label-bold">JV 설립 후</h5>
+									</label>
+									<input
+										type="radio"
+										name="travel-expense-jv-selection"
+										class="form-control radio-before-after"
+										id="post-travel-expense-after"
+										value="JV 설립 후"
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="travel-expense-container">
+							<div class="section-title">
+								<h4>국외 여비 지원의 신청 단계를 선택해주세요<span>*</span></h4>
+							</div>
+							<div class="form-wrapper">
+								<div class="form-group radio-group">
+									<label for="post-travel-approval">
+										<h5 class="label-bold">국외여비 활용계획 승인 신청</h5>
+									</label>
+									<input
+										type="radio"
+										name="travel-expense-selection"
+										class="form-control radio-select radio-travel-expense"
+										id="post-travel-approval"
+										value="Apply for approval to plan for Travel Expense (국외여비 활용계획 승인 신청)"
+									/>
+								</div>
+								<div class="form-group radio-group">
+									<label for="post-travel-payment">
+										<h5 class="label-bold">국외여비 사후정산 신청</h5>
+									</label>
+									<input
+										type="radio"
+										name="travel-expense-selection"
+										class="form-control radio-select radio-travel-expense"
+										id="post-travel-payment"
+										value="Apply for post-payment of Travel Expense (국외여비 사후 정산 신청)"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section-input">
+						<div class="form-group parent-before">
+							<label for="travel-before-currency-services">
+								<h5>통화</h5>
+							</label>
+							<select
+								name="travel-before-currency-services"
+								id="travel-before-currency-services"
+								class="travel-currency-services"
+							>
+								<option value="GBP">GBP</option>
+								<option value="CNY">CNY</option>
+								<option value="EUR">EUR</option>
+								<option value="JPY">JPY</option>
+								<option value="KRW" selected>KRW</option>
+								<option value="USD">USD</option>
+							</select>
+						</div>
+						<div class="form-group parent-before">
+							<label for="travel-before-currency">
+								<h5>출장에 소요될 것으로 예상되는 경비는 얼마입니까?</h5>
+							</label>
+							<input
+								type="number"
+								class="form-control text travel-currency"
+								id="travel-before-currency"
+								name="travel-before-currency"
+							/>
+						</div>
+						<div class="form-group parent-before">
+							<label for="travel-before-description">
+								<h5>국외여비 활용 계획을 간단히 설명해주세요.</h5>
+							</label>
+							<textarea
+								class="form-control text"
+								name="travel-before-description"
+								id="travel-before-description"
+								cols="40"
+								rows="3"
+								maxlength="5000"
+							></textarea>
+						</div>
+						<div class="form-group parent-before">
+							<h5>
+								국외여비 활용 신청을 위해 필요한 서류를 제출해주세요. 파일크기는
+								15MB를 초과할 수 없습니다.
+							</h5>
+							<ol>
+								<li class="travel-expense-list">
+									<div class="travel-expense-wrapper">
+										<label for="post-travel-plan">
+											출장계획서(여비 지출 내용 포함)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-travel-plan"
+											name="post-travel-plan"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="travel-expense-list">
+									<div class="travel-expense-wrapper">
+										<label for="post-platform-screen">
+											(숙박/항공) (여행사 이용 시) 견적서 또는 (직접 플랫폼
+											결제 시) 결제 예상금액 캡처화면
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-platform-screen"
+											name="post-platform-screen"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="travel-expense-list">
+									<div class="travel-expense-wrapper">
+										<label for="post-travel-before-business-license">
+											(숙박/항공) (여행사 이용 시) 거래처 사업자등록증 및
+											계좌사본
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-travel-before-business-license"
+											name="post-travel-before-business-license"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="travel-expense-list">
+									<div class="travel-expense-wrapper">
+										<label for="post-traveler-info">
+											출장자 임직원 증빙(국민연금, 4대보험 가입내역서)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-traveler-info"
+											name="post-traveler-info"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="travel-expense-list">
+									<div class="travel-expense-wrapper">
+										<label for="post-flight-ticket">
+											(직접 플랫폼 결제 시 – 항공권) 비국적기 이용시 동일 여정
+											국적기 운임 가격(결제 예상금액 캡쳐화면)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-flight-ticket"
+											name="post-flight-ticket"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+							</ol>
+						</div>
+						<div class="form-group parent-after">
+							<label for="travel-after-currency-services">
+								<h5>통화</h5>
+							</label>
+							<select
+								name="travel-after-currency-services"
+								id="travel-after-currency-services"
+								class="travel-currency-services"
+							>
+								<option value="GBP">GBP</option>
+								<option value="CNY">CNY</option>
+								<option value="EUR">EUR</option>
+								<option value="JPY">JPY</option>
+								<option value="KRW" selected>KRW</option>
+								<option value="USD">USD</option>
+							</select>
+						</div>
+						<div class="form-group parent-after">
+							<label for="travel-after-currency">
+								<h5>출장에 사용된 실 집행경비(항공임 및 숙박비)는 얼마입니까?</h5>
+							</label>
+							<input
+								type="number"
+								class="form-control text travel-currency"
+								id="travel-after-currency"
+								name="travel-after-currency"
+							/>
+						</div>
+						<div class="form-group parent-after">
+							<label for="travel-after-description">
+								<h5>국외여비 활용 결과를 간단히 설명해주세요.</h5>
+							</label>
+							<textarea
+								class="form-control text"
+								name="travel-after-description"
+								id="travel-after-description"
+								cols="40"
+								rows="3"
+								maxlength="5000"
+							></textarea>
+						</div>
+						<div class="form-group parent-after">
+							<h5>
+								국외여비 사후정산 신청을 위해 필요한 서류를 제출해주세요. 파일크기는
+								15MB를 초과할 수 없습니다.
+							</h5>
+							<ol>
+								<li class="travel-expense-list">
+									<div class="travel-expense-wrapper">
+										<label for="post-travel-report"> 출장 결과보고서 </label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-travel-report"
+											name="post-travel-report"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="travel-expense-list">
+									<div class="travel-expense-wrapper">
+										<label for="post-payment-info">
+											[여행사 이용 시] 세금계산서 및 이체확인증(계좌번호 기재
+											必) 또는 [직접 플랫폼 결제 시] 법인카드 매출전표 및
+											실물카드 사본
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-payment-info"
+											name="post-payment-info"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="travel-expense-list">
+									<div class="travel-expense-wrapper">
+										<label for="post-ticket-info">
+											항공기 탑승권(지류 탑승권 또는 모바일 캡처화면)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-ticket-info"
+											name="post-ticket-info"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<!-- Office Rent-->
+				<div class="form-info" id="office-rent-section">
+					<div class="section-before-after">
+						<div class="before-after-container">
+							<div class="section-title">
+								<h4>JV 설립 단계를 확인해주세요<span>*</span></h4>
+							</div>
+							<div class="form-wrapper">
+								<div class="form-group radio-group">
+									<label for="post-office-rent-before">
+										<h5 class="label-bold">JV 설립 전</h5>
+									</label>
+									<input
+										type="radio"
+										name="office-rent-jv-selection"
+										class="form-control radio-before-after"
+										id="post-office-rent-before"
+										value="JV 설립 전"
+										disabled
+									/>
+								</div>
+								<div class="form-group radio-group">
+									<label for="post-office-rent-after">
+										<h5 class="label-bold">JV 설립 후</h5>
+									</label>
+									<input
+										type="radio"
+										name="office-rent-jv-selection"
+										class="form-control radio-before-after"
+										id="post-office-rent-after"
+										value="JV 설립 후"
+										checked
+										disabled
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="office-rent-container">
+							<div class="section-title">
+								<h4>현지 임차료 지원의 신청 단계를 선택해주세요<span>*</span></h4>
+							</div>
+							<div class="form-wrapper">
+								<div class="form-group radio-group">
+									<label for="post-office-approval">
+										<h5 class="label-bold">현지 임차료 활용 승인 신청</h5>
+									</label>
+									<input
+										type="radio"
+										name="office-rent-selection"
+										class="form-control radio-select radio-office-rent"
+										id="post-office-approval"
+										value="Apply for approval to plan for JV Office rent (현지 임차료 활용 승인 신청)"
+									/>
+								</div>
+								<div class="form-group radio-group">
+									<label for="post-office-payment">
+										<h5 class="label-bold">현지 임차료 사후 정산 신청</h5>
+									</label>
+									<input
+										type="radio"
+										name="office-rent-selection"
+										class="form-control radio-select radio-office-rent"
+										id="post-office-payment"
+										value="Apply for post-payment of JV Office rent Fee (현지 임차료 사후 정산 신청)"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section-input">
+						<div class="form-group parent-before">
+							<label for="office-before-currency-services">
+								<h5>통화</h5>
+							</label>
+							<select
+								name="office-before-currency-services"
+								id="office-before-currency-services"
+							>
+								<option value="GBP">GBP</option>
+								<option value="CNY">CNY</option>
+								<option value="EUR">EUR</option>
+								<option value="JPY">JPY</option>
+								<option value="KRW" selected>KRW</option>
+								<option value="USD">USD</option>
+							</select>
+						</div>
+						<div class="form-group parent-before">
+							<label for="office-before-currency">
+								<h5>
+									해외 현지 사무공간 임차에 소요될 것으로 예상되는 금액은
+									얼마입니까?
+								</h5>
+							</label>
+							<input
+								type="number"
+								class="form-control text"
+								id="office-before-currency"
+								name="office-before-currency"
+							/>
+							<p class="input-info">
+								보험료, 기타 부대비용 등을 제외한 공간 임차료만 지 원대상에 포함,
+								최대2천만원한도
+							</p>
+						</div>
+						<div class="form-group parent-before">
+							<h5>
+								현지 사무공간의 임차 예상금액을 확인할 수 있는 서류가 있다면
+								제출해주세요. 파일크기는 15MB를 초과할 수 없습니다.
+							</h5>
+							<ol>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-office-before-contract">
+											임대차 계약서(JV-임대사업자 간)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-office-before-contract"
+											name="post-office-before-contract"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-office-before-invoice">
+											임차료 인보이스(정산기간 해당분 중 참여기업
+											지분율반영액)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-office-before-invoice"
+											name="post-office-before-invoice"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-office-before-business-license">
+											참여기업 사업자등록증 및 통장사본
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-office-before-business-license"
+											name="post-office-before-business-license"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-office-before-jv-info">
+											조인트벤처 사업자등록증 및 주주명부
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-office-before-jv-info"
+											name="post-office-before-jv-info"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+							</ol>
+						</div>
+						<div class="form-group parent-after">
+							<label for="office-after-currency-services">
+								<h5>통화</h5>
+							</label>
+							<select
+								name="office-after-currency-services"
+								id="office-after-currency-services"
+							>
+								<option value="GBP">GBP</option>
+								<option value="CNY">CNY</option>
+								<option value="EUR">EUR</option>
+								<option value="JPY">JPY</option>
+								<option value="KRW" selected>KRW</option>
+								<option value="USD">USD</option>
+							</select>
+						</div>
+						<div class="form-group parent-after">
+							<label for="office-after-currency">
+								<h5>
+									JV 설립 후 사업 운영을 위한 해외 현지 사무공간의 임차료
+									신청금액은 얼마입니까?
+								</h5>
+							</label>
+							<input
+								type="number"
+								class="form-control text"
+								id="office-after-currency"
+								name="office-after-currency"
+							/>
+							<p class="input-info">
+								월 렌트비 중 참여기업의 지분율 반영분 x 해당 개월 수
+							</p>
+						</div>
+						<div class="form-group parent-after">
+							<h5>
+								현지 사무공간의 임차료 신청을 위해 필요한 서류를 제출해주세요.
+								파일크기는 15MB를 초과할 수 없습니다.
+							</h5>
+							<ol>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-office-after-contract">
+											임대차 계약서(JV-임대사업자 간, 사업자등록/법인등기 내
+											주소지 대조)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-office-after-contract"
+											name="post-office-after-contract"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-rental-invoice-detailed">
+											임차료 인보이스(정산기간 해당분)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-rental-invoice-detailed"
+											name="post-rental-invoice_detailed"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-office-after-invoice">
+											임차료 인보이스(정산기간 해당분 중 참여기업 지분율 반영
+											액)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-office-after-invoice"
+											name="post-office-after-invoice"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-rental-transfer">
+											임차료 이체내역서(정산기간 해당분, JV 명의 계좌에서
+											이체)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-rental-transfer"
+											name="post-rental-transfer"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-currency-info">
+											참여기업의 외화송금 내역(정산기간 내 지분율 반영분,
+											참여기업 → JV 명의 계좌로 이체)
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-currency-info"
+											name="post-currency-info"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-office-after-business-license">
+											참여기업 사업자등록증 및 통장사본
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-office-after-business-license"
+											name="post-office-after-business-license"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+								<li class="office-rent-list">
+									<div class="office-rent-wrapper">
+										<label for="post-office-after-jv-info">
+											참여기업 사업자등록증 및 통장사본
+										</label>
+										<input
+											type="file"
+											class="form-control file"
+											id="post-office-after-jv-info"
+											name="post-office-after-jv-info"
+											accept="image/*,.pdf,.xls,.xlxs"
+										/>
+									</div>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="form-info form-group">
+					<label for="contact-method">
+						<h5>컨설팅 상담은 어떤 방식을 선호하시나요?</h5>
+					</label>
+					<select name="contact-method" id="contact-method">
+						<option value=""></option>
+						<option value="Email">Email</option>
+						<option value="Mobile Phone">Mobile Phone</option>
+					</select>
+				</div>
+				<div class="form-info form-group">
+					<label for="post-availability">
+						<h5>전화 상담을 선호하신다면 통화 가능하신 시간을 제안해주세요.</h5>
+					</label>
+					<input
+						type="text"
+						class="form-control text"
+						id="post-availability"
+						name="post-availability"
+						placeholder="시간 제한 없음 / 9-6 근무 시간 중/  6월1일 오전 중"
+					/>
+				</div>
+				<div class="form-info" id="policy-section">
+					<div class="section-title">
+						<h4 id="policy-title">개인 정보 수집 및 이용 동의 <span>*</span></h4>
+						<input
+							type="checkbox"
+							name="agree-terms"
+							id="agree-terms"
+							value="agree"
+							required
+						/>
+					</div>
+					<ol>
+						<li>
+							<p>수집하는 개인정보는 회사명, 이름, 이메일, 휴대폰 번호</p>
+						</li>
+						<li>
+							<p>
+								개인정보의 수집 및 이용 목적 제공하신 정보는 컨설팅 서비스 신청
+								확인을 위해 사용됩니다.
+							</p>
+						</li>
+						<li>
+							<p>
+								개인정보의 보유 및 이용기간 수집된 개인정보는 협약기간 종료 후 4년간
+								보관됩니다. 개인 정보 제공 동의가 없으면 컨설팅 서비스 신청이
+								불가합니다.
+							</p>
+						</li>
+					</ol>
+				</div>
+				<div class="captcha-container">
+					<div id="captcha" class="captcha"></div>
+					<div class="input-container">
+						<div class="input">
+							<input
+								type="text"
+								name="reCaptcha"
+								id="reCaptcha"
+								placeholder="Enter the Captcha code"
+								required="true"
+							/>
+						</div>
+						<div class="restart">
+							<a class="captcha-restart" href="#">Change</a>
+						</div>
+					</div>
+					<div class="btn-container"></div>
+					<div id="errCaptcha" class="errmsg"></div>
+				</div>
+				<div class="form-info" id="btn-section">
+					<input type="submit" class="btn btn-primary" />
+					<button class="btn btn-clear">Clear</button>
+					<div class="loader"></div>
+					<p class="msg"></p>
+				</div>
+			</form>
+		</div>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
